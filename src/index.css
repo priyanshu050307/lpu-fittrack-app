@@ -1,15 +1,17 @@
-/* Simple Student CSS for FitTrack Pro Workout Planner */
+/* Minimalistic, Symmetric, and Well-Aligned Styles for FitTrack Pro Workout Planner */
 :root {
-  --primary-color: #3f51b5;
-  --primary-dark: #303f9f;
-  --accent-color: #ff4081;
-  --success-color: #4caf50;
-  --bg-color: #f4f5f7;
-  --text-color: #333333;
-  --text-muted: #777777;
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --accent-color: #db2777;
+  --success-color: #10b981;
+  --bg-color: #f8fafc;
   --card-bg: #ffffff;
-  --border-color: #dddddd;
-  --font-family: Arial, sans-serif;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --radius: 6px;
 }
 
 * {
@@ -20,7 +22,7 @@
 
 body {
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--text-main);
   font-family: var(--font-family);
   min-height: 100vh;
   line-height: 1.5;
@@ -39,27 +41,25 @@ body {
 
 .main-content-wrapper {
   flex: 1;
-  max-width: 1100px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
 }
 
 /* Navbar */
 .app-nav-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.5rem 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .nav-container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,54 +70,57 @@ body {
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: bold;
+  color: var(--text-main);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .logo-svg {
-  width: 24px;
-  height: 24px;
-  color: white;
+  width: 22px;
+  height: 22px;
+  color: var(--primary-color);
 }
 
 .nav-logo span {
-  color: #ffeaa7;
+  color: var(--primary-color);
 }
 
 .nav-links {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .nav-item {
-  color: #e0e0e0;
+  color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
 }
 
 .nav-item:hover {
-  color: white;
-  background-color: rgba(255,255,255,0.1);
+  color: var(--text-main);
 }
 
 .nav-item.active {
-  color: #3f51b5;
-  background-color: white;
-  font-weight: bold;
+  color: white;
+  background-color: var(--primary-color);
+  font-weight: 600;
 }
 
 /* Page Header */
 .page-header {
   margin-bottom: 2rem;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.75rem;
 }
 
 .page-header h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .page-header h1 span {
@@ -126,19 +129,20 @@ body {
 
 .page-header p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
 }
 
-/* Glass panel simplified to normal cards */
+/* Panel Card */
 .glass-panel {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: var(--radius);
   padding: 1.5rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* Dashboard grid */
+/* Dashboard Grid */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -165,14 +169,15 @@ body {
 }
 
 .stat-card-header h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /* Profile details */
 .profile-details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .profile-detail {
@@ -181,13 +186,14 @@ body {
 }
 
 .profile-detail .label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 .profile-detail .val {
-  font-size: 1.1rem;
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .bmi-detail-container {
@@ -195,20 +201,20 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .bmi-tag {
   font-size: 0.75rem;
-  font-weight: bold;
-  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
   border-radius: 4px;
 }
 
-.bmi-under { background: #e3f2fd; color: #1e88e5; }
-.bmi-healthy { background: #e8f5e9; color: #4caf50; }
-.bmi-over { background: #fff3e0; color: #fb8c00; }
-.bmi-obese { background: #ffebee; color: #e53935; }
+.bmi-under { background: #eff6ff; color: #2563eb; }
+.bmi-healthy { background: #ecfdf5; color: #10b981; }
+.bmi-over { background: #fffbeb; color: #d97706; }
+.bmi-obese { background: #fef2f2; color: #dc2626; }
 
 /* Stats box totals */
 .stats-metric-wrapper {
@@ -220,39 +226,40 @@ body {
 .metric-box {
   flex: 1;
   text-align: center;
-  background: #fafafa;
+  background: #f8fafc;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  padding: 1rem;
+  border-radius: var(--radius);
+  padding: 0.75rem;
 }
 
 .metric-number {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--accent-color);
 }
 
 .metric-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
 }
 
-/* SVG Chart styled simply */
+/* SVG Chart */
 .empty-chart-msg, .empty-history-msg {
   padding: 2rem;
   text-align: center;
   color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .svg-chart-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
 .svg-chart {
   width: 100%;
-  height: 200px;
+  height: 180px;
 }
 
 .chart-bar {
@@ -265,29 +272,31 @@ body {
   color: white;
   border: none;
   padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+  border-radius: var(--radius);
   cursor: pointer;
-  font-weight: bold;
-  font-size: 0.85rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  font-family: inherit;
+  transition: background-color 0.2s;
 }
 
 .header-action-btn:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-hover);
 }
 
 .routines-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .routine-card {
-  padding: 1.25rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  background-color: #fafafa;
+  background-color: #f8fafc;
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: var(--radius);
 }
 
 .routine-header {
@@ -298,22 +307,23 @@ body {
 }
 
 .routine-header h4 {
-  font-size: 1.05rem;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .ex-count {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--primary-color);
-  background: #e8f4fd;
+  background: #eff6ff;
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .routine-desc {
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   flex-grow: 1;
 }
 
@@ -329,9 +339,10 @@ body {
   background-color: var(--success-color);
   color: white;
   border: none;
-  padding: 0.45rem;
-  border-radius: 4px;
-  font-weight: bold;
+  padding: 0.4rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
@@ -343,13 +354,14 @@ body {
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-muted);
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .delete-routine-btn:hover {
@@ -358,8 +370,8 @@ body {
 }
 
 .delete-routine-btn svg {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 }
 
 /* History Logs */
@@ -368,7 +380,7 @@ body {
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .clear-history-btn:hover {
@@ -379,7 +391,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  max-height: 200px;
+  max-height: 180px;
   overflow-y: auto;
 }
 
@@ -387,26 +399,27 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6rem 0.85rem;
-  background: #fdfdfd;
+  padding: 0.5rem 0.75rem;
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: var(--radius);
   gap: 1rem;
 }
 
 .history-main h5 {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .history-date {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
 }
 
 .history-metrics {
   display: flex;
-  gap: 0.75rem;
-  font-size: 0.8rem;
+  gap: 0.6rem;
+  font-size: 0.75rem;
 }
 
 .history-metrics .lbl {
@@ -415,21 +428,22 @@ body {
 
 .cal-metric {
   color: var(--accent-color);
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* Forms */
+/* Forms general */
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .form-group label {
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: #555;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 .builder-form input[type="text"],
@@ -437,12 +451,14 @@ body {
 .builder-form input[type="number"],
 .planner-form input[type="number"],
 .planner-form select {
-  padding: 0.6rem;
+  padding: 0.5rem 0.75rem;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  font-size: 0.95rem;
-  background-color: white;
-  color: #333;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  outline: none;
+  font-family: inherit;
 }
 
 .builder-form input:focus,
@@ -450,7 +466,6 @@ body {
 .planner-form input:focus,
 .planner-form select:focus {
   border-color: var(--primary-color);
-  outline: none;
 }
 
 .input-error {
@@ -462,34 +477,33 @@ body {
   color: #f44336;
 }
 
-/* Workout Builder rows */
+/* Workout Builder Exercises */
 .builder-exercises-section {
   border-top: 1px solid var(--border-color);
-  padding-top: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .builder-exercises-section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .exercises-rows-container {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .exercise-builder-row {
   display: grid;
   grid-template-columns: auto 1fr 70px 70px 70px auto;
-  gap: 0.75rem;
+  gap: 0.5rem;
   align-items: center;
-  background: #fcfcfc;
-  padding: 0.75rem;
+  background: #f8fafc;
+  padding: 0.5rem;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 @media (max-width: 768px) {
@@ -499,23 +513,23 @@ body {
 }
 
 .row-number {
-  font-weight: bold;
+  font-weight: 700;
   color: var(--primary-color);
 }
 
 .input-col {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
 .input-col label {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
 }
 
 .input-col input {
-  padding: 0.4rem !important;
+  padding: 0.35rem 0.5rem !important;
   font-size: 0.85rem !important;
 }
 
@@ -523,9 +537,9 @@ body {
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-muted);
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -545,23 +559,24 @@ body {
   background: white;
   border: 1px dashed var(--border-color);
   color: var(--primary-color);
-  padding: 0.6rem;
+  padding: 0.5rem;
   width: 100%;
-  border-radius: 4px;
+  border-radius: var(--radius);
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 0.75rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
 }
 
 .add-exercise-row-btn:hover {
-  background-color: #f0f4ff;
+  background-color: #eff6ff;
 }
 
 .form-submit-actions {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   border-top: 1px solid var(--border-color);
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   margin-top: 1rem;
 }
 
@@ -569,34 +584,36 @@ body {
   background-color: var(--primary-color);
   color: white;
   border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 4px;
-  font-weight: bold;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
 .save-routine-btn:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-hover);
 }
 
 .cancel-btn {
-  background-color: #95a5a6;
-  color: white;
-  border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 4px;
-  font-weight: bold;
+  background-color: #e2e8f0;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
 .cancel-btn:hover {
-  background-color: #7f8c8d;
+  background-color: #cbd5e1;
 }
 
 /* Exercise Library Page */
 .exercise-search-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 200px 1fr;
   gap: 1.5rem;
 }
 
@@ -607,8 +624,8 @@ body {
 }
 
 .search-sidebar h3 {
-  font-size: 1.05rem;
-  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.25rem;
 }
@@ -617,10 +634,11 @@ body {
   background: transparent;
   border: 1px dashed var(--border-color);
   color: var(--text-muted);
-  padding: 0.5rem;
+  padding: 0.4rem;
   width: 100%;
-  border-radius: 4px;
+  border-radius: var(--radius);
   cursor: pointer;
+  font-size: 0.8rem;
   margin-top: 0.5rem;
 }
 
@@ -632,62 +650,66 @@ body {
 
 .exercise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 1rem;
 }
 
 .exercise-card {
-  padding: 1rem;
-  background-color: white;
+  padding: 0.85rem;
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: all 0.2s ease;
 }
 
 .exercise-card:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border-color: var(--primary-color);
 }
 
 .card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .ex-tag {
-  font-size: 0.75rem;
-  background-color: #f1f2f6;
-  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
+  background-color: #eff6ff;
+  color: var(--primary-color);
+  padding: 0.1rem 0.35rem;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .card-top h4 {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .exercise-card p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
-/* Detail Drawer (styled as simple modal overlay) */
+/* Detail Drawer / Modal */
 .drawer-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .drawer-overlay.show {
@@ -696,12 +718,12 @@ body {
 }
 
 .drawer-content {
-  background-color: white;
+  background-color: var(--card-bg);
   width: 90%;
-  max-width: 500px;
+  max-width: 440px;
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -711,36 +733,39 @@ body {
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .close-drawer-btn {
   background: none;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
+  color: var(--text-muted);
 }
 
 .drawer-body h4 {
-  margin: 1rem 0 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0.75rem 0 0.2rem;
 }
 
 .drawer-body p {
-  color: #555;
-  font-size: 0.95rem;
+  color: var(--text-main);
+  font-size: 0.88rem;
 }
 
-/* Active Workout timer */
+/* Active Workout Timer */
 .active-workout-layout {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .active-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 1.25rem;
 }
 
 @media (max-width: 768px) {
@@ -751,14 +776,14 @@ body {
 
 .timer-card {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .timer-display {
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--primary-color);
-  margin: 1rem 0;
+  margin: 0.75rem 0;
 }
 
 .session-controls {
@@ -768,35 +793,36 @@ body {
 }
 
 .session-controls button {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.85rem;
   border: none;
-  border-radius: 4px;
-  font-weight: bold;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
 .finish-btn { background-color: var(--success-color); color: white; }
-.quit-btn { background-color: #e74c3c; color: white; }
+.quit-btn { background-color: #ef4444; color: white; }
 
 .active-exercises-list {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .active-exercise-item {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
-  gap: 1rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius);
+  gap: 0.75rem;
 }
 
 .active-exercise-item.completed {
-  background-color: #f1f8e9;
-  border-color: #c8e6c9;
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
 }
 
 .active-exercise-item.completed .ex-info-col h4 {
@@ -805,25 +831,29 @@ body {
 }
 
 .check-col input {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .ex-info-col h4 {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .ex-info-col p {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
 /* Footer */
 .app-footer {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
 }
 
 .hidden {
