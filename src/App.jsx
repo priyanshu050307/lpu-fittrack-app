@@ -14,10 +14,7 @@ export default function App() {
     <Provider store={store}>
       <Router>
         <div className="fittrack-layout">
-          <div className="animated-blobs">
-            <div className="blob blob-1"></div>
-            <div className="blob blob-2"></div>
-          </div>
+
           
           <Navbar />
           
